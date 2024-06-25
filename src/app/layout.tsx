@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Image from "next/image";
+import Quadra from "@/images/quadra.jpg"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +18,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Image className="blur-sm -z-10" fill objectFit="cover" src={Quadra} alt="quadra" />
+        {children}
+      </body>
     </html>
   );
 }
